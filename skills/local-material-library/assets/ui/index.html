@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>本地资料库</title><link rel="icon" href="data:,"><link rel="stylesheet" href="/styles.css"><script src="/app.js" defer></script></head>
+<body>
+<header><div><span class="eyebrow">LOCAL ARCHIVE</span><h1 id="title">本地资料库</h1></div><div class="actions"><button id="scan">刷新索引</button><button id="ocr">OCR 下一批</button></div></header>
+<main>
+<section class="filters" aria-label="资料筛选"><input type="search" id="search" aria-label="搜索资料" placeholder="搜索文件名、正文、标签或备注"><select id="category" aria-label="分类"><option value="">全部分类</option></select><select id="state" aria-label="状态"><option value="active">全部资料</option><option value="duplicates">完全重复</option><option value="pending">待 OCR / 失败</option><option value="hidden">已隐藏</option><option value="missing">原文件缺失</option></select></section>
+<div class="summary"><span id="count">正在读取</span><span id="job" role="status"></span></div><p id="error" role="alert" hidden></p>
+<section id="results" aria-label="资料列表"></section>
+<nav class="pagination" aria-label="结果翻页"><button id="prev" aria-label="上一组" title="上一组">←</button><span id="range"></span><button id="next" aria-label="下一组" title="下一组">→</button></nav>
+</main>
+<dialog id="reader"><div class="reader-heading"><h2 id="filename"></h2><button id="close" aria-label="关闭" title="关闭">×</button></div>
+<div class="reader-layout"><section class="document"><div class="page-tools"><button id="page-prev" aria-label="上一页" title="上一页">←</button><input type="number" id="page-number" min="1" aria-label="页码"><span id="page-total"></span><button id="page-next" aria-label="下一页" title="下一页">→</button><a id="original">下载原文件</a></div><p id="preview-error" role="alert" hidden></p><div id="page-view"><img id="page-image" alt="原文件页面"><pre id="page-text"></pre></div><details id="transcript"><summary>提取文字</summary><pre id="extracted"></pre></details></section>
+<aside><p id="filepath"></p><div id="hits"></div><p id="page-status"></p><form id="metadata"><label>分类<input id="edit-category" maxlength="200" required></label><label>标签<input id="edit-tags" maxlength="1000"></label><label>备注<textarea id="edit-notes" maxlength="10000" rows="5"></textarea></label><button type="submit" class="primary">保存</button><span id="saved" role="status"></span></form><button id="hide"></button></aside></div>
+</dialog>
+</body></html>
