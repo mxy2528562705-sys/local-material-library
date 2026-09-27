@@ -1,0 +1,4 @@
+interface:
+  display_name: "文史社科类资料整理流程包"
+  short_description: "把本地文献、图片和笔记整理成可搜索、可分类、可逐页浏览的资料库"
+  default_prompt: "使用 $local-material-library 把我指定的资料文件夹生成一个可搜索、可分类的本地管理界面。"
